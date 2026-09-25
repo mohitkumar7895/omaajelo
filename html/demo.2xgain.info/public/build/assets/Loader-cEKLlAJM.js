@@ -1,0 +1,1 @@
+/* empty css                                               */import{_ as o}from"_plugin-vue_export-helper-DlAUqK2U.js";import{o as r,f as s,b as a}from"app-Her3R83I.js";const t={},c={class:"loader-area"};function n(d,e){return r(),s("div",c,e[0]||(e[0]=[a("div",{class:"loader"},null,-1)]))}const f=o(t,[["render",n]]);export{f as L};
