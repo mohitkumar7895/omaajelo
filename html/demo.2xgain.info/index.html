@@ -1572,8 +1572,16 @@ input#sponsor:focus {
 .invite-hint {
     display: block;
     margin: 0 0 10px;
-    color: #b7bdd4;
     font-size: 13px;
+    font-weight: 700;
+}
+.invite-hint.verified {
+    color: #37f29a;
+    text-shadow: 0 0 10px rgba(55, 242, 154, 0.35);
+}
+.invite-hint.non-verified {
+    color: #ff5b73;
+    text-shadow: 0 0 10px rgba(255, 91, 115, 0.3);
 }
 
 .invitaion_link {
@@ -1622,10 +1630,12 @@ input#sponsor:focus {
                 <div class="register_in">
                     <label class="sponer_id">Invitation Code</label>
                     
-                     <Input id="sponsor" placeholder="Enter invitation code" type="text" value=""
+                     <Input id="sponsor" placeholder="Referral ID" type="text" value=""
                                           class="mt-1 block w-full" name="sponsor" required autofocus
-                                          autocomplete="sponsor" onchange="return verify_sponsor()" />
-                                       <p class="invite-hint">Format: 6-12 letters or numbers</p>
+                                          autocomplete="sponsor"
+                                          oninput="setInviteCodeStatus(false)"
+                                          onchange="return verify_sponsor()" />
+                                       <p class="invite-hint non-verified" id="code_status">Non Verified</p>
                                        <span class="text-white" id="sp_name"></span>
                                         
                   
@@ -1640,7 +1650,7 @@ input#sponsor:focus {
                 <div class="regBtn" style="display:block;">
                     <div class="both_btn">
                       <button type="button" class="register_back_btn" onclick="closeRegisterPopup()">Cancel</button>
-                      <button class="regView" onclick="return registerfun()">Confirm</button>
+                      <button class="regView" onclick="return registerfun()">Register</button>
                     </div>
                 </div>
           
@@ -2379,6 +2389,14 @@ function closeRegisterPopup() {
          }
          
          let sponsorval = '' ;
+
+         function setInviteCodeStatus(isVerified) {
+             const status = document.getElementById('code_status');
+             if (!status) return;
+             status.textContent = isVerified ? 'Verified' : 'Non Verified';
+             status.classList.toggle('verified', isVerified);
+             status.classList.toggle('non-verified', !isVerified);
+         }
          
          async function preview(){
             // alert();
@@ -2390,29 +2408,41 @@ function closeRegisterPopup() {
          }
          
          async function verify_sponsor(){
-             let rr = await getUserAccount();
-             
-             let dta = {
-                 _token : "kizpby7C0c9eCu7iVT9weXLeHAWYm8kcQ5oeqGee",
-                 sponsor:$('#sponsor').val(),
-                 eth_address : rr
-             }
-             
-             $.post('/verify_sponsor',dta,function(res){
-                 
-                 //console.log(res.success);
-                 if(res.success==true){
-                     $('.regBtn').css('display','block');
-                     $('#sp_name').html(res.data.name);
-                     $('#sp_name').css('color','#fff');
-                     sponsorval = res.data.eth_address;
+             const code = $('#sponsor').val().trim();
+             setInviteCodeStatus(false);
+             if (!code) return false;
 
-                 }else{
-                     $('#sp_name').html("Invalid Sponsor");
-                     $('#sp_name').css('color','red');
-                 }
-                 //console.log();
-             });
+             try {
+                 let rr = await getUserAccount();
+                 let dta = {
+                     _token : "kizpby7C0c9eCu7iVT9weXLeHAWYm8kcQ5oeqGee",
+                     sponsor: code,
+                     eth_address : rr
+                 };
+
+                 $.post('/verify_sponsor', dta, function(res){
+                     const isVerified = res.success === true;
+                     setInviteCodeStatus(isVerified);
+
+                     if (isVerified) {
+                         $('.regBtn').css('display','block');
+                         $('#sp_name').html(res.data.name);
+                         $('#sp_name').css('color','#fff');
+                         sponsorval = res.data.eth_address;
+                     } else {
+                         $('#sp_name').html('');
+                         sponsorval = '';
+                     }
+                 }).fail(function(){
+                     setInviteCodeStatus(false);
+                     sponsorval = '';
+                 });
+             } catch (error) {
+                 setInviteCodeStatus(false);
+                 sponsorval = '';
+             }
+
+             return false;
          }
          async function registerfun(){
              $('.regBtn').css('display','none');
