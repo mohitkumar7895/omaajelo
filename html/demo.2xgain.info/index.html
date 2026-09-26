@@ -1243,7 +1243,7 @@ button.login_update {
                 
                 
                     <div class="header-btn ul_li">
-                        <a class="login-btn" href="login.html"> Register</a>
+                        <a class="login-btn" href="#" onclick="openRegisterPopup(); return false;">Register</a>
                          <div class="contect_wallet" >
                               <button type="button" class="wallet-like-login" onclick="this.nextElementSibling.click()">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -1439,8 +1439,8 @@ input#sponsor::placeholder{
     width: 100%;
     height: 100%;
     background: rgba(4, 6, 16, 0.72);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
     z-index: 99999;
     display: flex;
     align-items: center;
@@ -1532,16 +1532,16 @@ input#sponsor::placeholder{
 }
 .invite-close {
     position: absolute;
-    top: 8px;
-    right: 8px;
+    top: 14px;
+    right: 7px;
     z-index: 3;
-    width: 30px;
-    height: 30px;
+    width: 27px;
+    height: 27px;
     border-radius: 50%;
     border: 1.5px solid rgba(255,255,255,0.85);
     background: rgba(8, 4, 24, 0.45);
     color: #fff;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1;
     cursor: pointer;
     flex: 0 0 auto;
@@ -1602,7 +1602,7 @@ input#sponsor:focus {
           <button type="button" class="invite-close" onclick="closeRegisterPopup()" aria-label="Close">&times;</button>
           <div class="invite-hero">
             <svg viewBox="0 0 1254 760" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Jubblion DAO">
-              <image href="public/mtheme1/assets2/img/dooo.png" x="0" y="-120" width="1254" height="1254"/>
+              <image href="public/mtheme1/assets2/img/dooo.png" x="30" y="-90" width="1194" height="1194"/>
             </svg>
           </div>
           <div class="invite-body">
@@ -2194,13 +2194,13 @@ Global Spillover</h2>
                         <ul class="xb-item--footer_widget-list">
                              <li><a href="index.html"></a>Home</li>
                             <li><a href="index.html#about"></a> About Us</li>
-                            <li><a href="register.html"></a>Register </li>
+                            <li><a href="#" onclick="openRegisterPopup(); return false;">Register</a></li>
                         </ul>
                        
                     </div>
                     <div class="xb-item--footer_widget-community mb-30">
                         <h3>Join Our Popular  ICO Community</h3>
-                        <a class="them-btn" href="login.html">
+                        <a class="them-btn" href="#" onclick="openRegisterPopup(); return false;">
                             <span class="btn_icon">
                                 <img src="public/mtheme1/assets2/img/icon/discord-f-icon.svg" alt="">
                             </span>
