@@ -152,7 +152,7 @@ body {
 }
 
  .logo_reposnive{
-        width:150px;
+        width:180px;
     }
 
 @media (max-width: 600px) {
@@ -844,18 +844,24 @@ h2.chooseheading {
 }
 .jb-live small {
     display: block;
-    color: #8d93ad;
+    color: #ff4d6d;
+    background: linear-gradient(90deg, #ff334f, #ff9f43);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-size: 9px;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     line-height: 1.1;
+    text-shadow: 0 0 10px rgba(255, 77, 109, 0.55);
 }
 .jb-live strong {
     display: block;
-    color: #f4f6ff;
+    color: #55d8ff;
     font-size: 12px;
     font-weight: 650;
     letter-spacing: 0.02em;
+    text-shadow: 0 0 10px rgba(85, 216, 255, 0.4);
 }
 .jb-actions {
     display: flex;
@@ -1051,7 +1057,7 @@ button.login_update {
         justify-self: start;
     }
     .header-logo .logo_reposnive {
-        width: clamp(88px, 28vw, 112px);
+        width: clamp(100px, 34vw, 130px);
         max-width: 100%;
         display: block;
     }
@@ -1110,7 +1116,7 @@ button.login_update {
         padding: 6px;
     }
     .header-logo .logo_reposnive {
-        width: 88px;
+        width: 96px;
     }
     .wallet-like-login {
         width: 104px;
@@ -2221,6 +2227,8 @@ Global Spillover</h2>
       document.addEventListener("DOMContentLoaded", function () {
     const popup = document.getElementById("popup_update");
     const closeBtn = document.getElementById("close_icon");
+
+    if (!popup || !closeBtn) return;
 
     // Show popup automatically after page loads
     popup.style.display = "flex";
