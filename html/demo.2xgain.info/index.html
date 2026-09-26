@@ -84,9 +84,9 @@ body {
 
 /* Globe Icon Button */
 .lang-globe-btn {
-  background: rgba(8, 10, 24, 0.7);
-  border: 1px solid rgba(140, 160, 255, 0.28);
-  color: #d7dcff;
+  background: #181426;
+  border: 2px solid rgba(174, 139, 255, 0.24);
+  color: #f1efff;
   width: 40px;
   height: 40px;
   border-radius: 14px;
@@ -95,7 +95,7 @@ body {
   justify-content: center;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04);
+  box-shadow: inset 0 0 12px rgba(160, 90, 255, 0.08);
 }
 
 .lang-globe-btn:hover {
@@ -984,6 +984,15 @@ button.login_update {
     letter-spacing: 0.04em;
     cursor: pointer;
     box-shadow: 0 8px 18px rgba(92, 70, 255, 0.35), inset 0 1px 0 rgba(255,255,255,0.35);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+}
+.wallet-like-login svg {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 auto;
 }
 .wallet-like-login:hover {
     transform: translateY(-1px);
@@ -995,6 +1004,34 @@ button.login_update {
     height: 100%;
     opacity: 0;
     z-index: 2;
+}
+
+.header-area .header__wrap {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 48px minmax(0, 1fr);
+    align-items: center;
+    gap: 10px;
+}
+.header-logo {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start;
+}
+.main-menu__wrap {
+    display: none !important;
+}
+.header-btn.ul_li {
+    display: contents !important;
+}
+.language_google {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: center;
+}
+.contect_wallet {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: end;
 }
 
 @media (max-width: 600px) {
@@ -1014,7 +1051,7 @@ button.login_update {
         justify-self: start;
     }
     .header-logo .logo_reposnive {
-        width: 112px;
+        width: clamp(88px, 28vw, 112px);
         max-width: 100%;
         display: block;
     }
@@ -1036,12 +1073,16 @@ button.login_update {
         width: auto;
     }
     .wallet-like-login {
-        width: 108px;
+        width: clamp(104px, 31vw, 120px);
         height: 36px;
-        padding: 0 8px;
-        font-size: 10px;
+        padding: 0 6px;
+        font-size: clamp(9px, 2.7vw, 10px);
         letter-spacing: 0;
         white-space: nowrap;
+    }
+    .wallet-like-login svg {
+        width: 16px;
+        height: 16px;
     }
     .lang-globe-btn {
         width: 34px;
@@ -1055,6 +1096,62 @@ button.login_update {
     .lang-vertical-dropdown {
         right: 50%;
         transform: translateX(50%);
+    }
+}
+
+@media (max-width: 340px) {
+    .header-area {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+    .header-area .header__wrap {
+        grid-template-columns: minmax(0, 1fr) 32px minmax(0, 1fr);
+        gap: 3px;
+        padding: 6px;
+    }
+    .header-logo .logo_reposnive {
+        width: 88px;
+    }
+    .wallet-like-login {
+        width: 104px;
+        height: 33px;
+        font-size: 9px;
+        gap: 4px;
+    }
+    .wallet-like-login svg {
+        width: 14px;
+        height: 14px;
+    }
+    .lang-globe-btn {
+        width: 30px;
+        height: 30px;
+        border-radius: 10px;
+    }
+    .jb-dock {
+        margin-left: 6px;
+        margin-right: 6px;
+        gap: 5px;
+        padding: 6px;
+    }
+    .jb-live {
+        gap: 6px;
+        padding-left: 3px;
+    }
+    .jb-live small {
+        font-size: 7px;
+    }
+    .jb-live strong {
+        font-size: 10px;
+    }
+    .jb-actions {
+        gap: 5px;
+    }
+    a.login_update,
+    button.login_update {
+        min-width: 72px;
+        height: 35px;
+        padding: 0 9px;
+        font-size: 10px;
     }
 }
 
@@ -1142,7 +1239,14 @@ button.login_update {
                     <div class="header-btn ul_li">
                         <a class="login-btn" href="login.html"> Register</a>
                          <div class="contect_wallet" >
-                              <button type="button" class="wallet-like-login" onclick="this.nextElementSibling.click()">Connect Wallet</button>
+                              <button type="button" class="wallet-like-login" onclick="this.nextElementSibling.click()">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                  <path d="M4 6.5h13.5A2.5 2.5 0 0 1 20 9v9H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h12"/>
+                                  <path d="M16 11h5v4h-5a2 2 0 1 1 0-4Z"/>
+                                  <circle cx="16.5" cy="13" r=".5" fill="currentColor" stroke="none"/>
+                                </svg>
+                                <span>Connect Wallet</span>
+                              </button>
                               <w3m-button balance="hide" size="sm" loadingLabel="Loading..." label="Connect Wallet"></w3m-button>
                 </div>
                            <div class="language_google">
