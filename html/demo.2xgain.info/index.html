@@ -1583,6 +1583,23 @@ input#sponsor:focus {
     color: #ff5b73;
     text-shadow: 0 0 10px rgba(255, 91, 115, 0.3);
 }
+.login-popup-copy {
+    margin: 4px 0 14px;
+    color: #c5cbe0;
+    font-size: 13px;
+}
+.login-wallet-action {
+    width: 100%;
+    height: 44px;
+    border: 0;
+    border-radius: 14px;
+    background: linear-gradient(90deg, #7b4dff 0%, #5b7cff 55%, #3d9bff 100%);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 18px rgba(80, 90, 255, 0.35);
+}
 
 .invitaion_link {
     margin-top: 6px;
@@ -1604,6 +1621,23 @@ input#sponsor:focus {
 </style>
 <main>
     
+    <div class="regsiter_page_design" id="login_sec" style="display:none;">
+        <div class="regsiter_page_content">
+          <button type="button" class="invite-close" onclick="closeLoginPopup()" aria-label="Close">&times;</button>
+          <div class="invite-hero">
+            <svg viewBox="0 0 1254 760" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Jubblion DAO">
+              <image href="public/mtheme1/assets2/img/dooo.png" x="30" y="-90" width="1194" height="1194"/>
+            </svg>
+          </div>
+          <div class="invite-body">
+            <div class="invite-ask">
+              <h2>Welcome Back</h2>
+            </div>
+            <p class="login-popup-copy">Connect your wallet securely to continue.</p>
+            <button type="button" class="login-wallet-action" onclick="openWalletFromLogin()">Connect Wallet</button>
+          </div>
+        </div>
+    </div>
     
     <div class="regsiter_page_design" id="reg_sec" style="display:none;">
         <div class="regsiter_page_content">
@@ -1676,7 +1710,7 @@ input#sponsor:focus {
                 </div>
             </div>
             <div class="jb-actions">
-                <a class="login_update" href="login.html">Login</a>
+                <a class="login_update" href="#" onclick="openLoginPopup(); return false;">Login</a>
                 <button type="button" class="login_update register_update" onclick="openRegisterPopup()">Register</button>
             </div>
         </div>
@@ -2345,6 +2379,27 @@ Global Spillover</h2>
 <!-- =============================================================== -->
 
 <script>
+function openLoginPopup() {
+    document.getElementById('login_sec').style.display = 'flex';
+}
+
+function closeLoginPopup() {
+    document.getElementById('login_sec').style.display = 'none';
+}
+
+function openWalletFromLogin() {
+    const wallet = document.querySelector('.contect_wallet w3m-button');
+    const connectButton = wallet?.shadowRoot?.querySelector('w3m-connect-button');
+    const walletButton = connectButton?.shadowRoot?.querySelector('wui-connect-button');
+
+    closeLoginPopup();
+    if (walletButton) {
+        walletButton.click();
+    } else if (wallet) {
+        wallet.click();
+    }
+}
+
 function openRegisterPopup() {
    
         document.getElementById('reg_sec').style.display = 'flex';

@@ -2,7 +2,7 @@
 <html lang="en">
     
     
-<!-- Mirrored from https://demo.2xgain.info/login by HTTrack Website Copier/3.x [XR&CO], Fri, 25 Sep 2026 16:04:33 GMT -->
+<!-- Mirrored from https://demo.2xgain.info/ by HTTrack Website Copier/3.x [XR&CO], Fri, 25 Sep 2026 16:01:30 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
         <meta charset="utf-8">
@@ -84,22 +84,25 @@ body {
 
 /* Globe Icon Button */
 .lang-globe-btn {
-  background: #141122;
-  border: 1px solid #2b2740;
-  color: #ffffff;
-  width: 48px;
-  height: 48px;
-  border-radius: 20px;
+  background: #181426;
+  border: 2px solid rgba(174, 139, 255, 0.24);
+  color: #f1efff;
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all 0.2s ease;
+  box-shadow: inset 0 0 12px rgba(160, 90, 255, 0.08);
 }
 
 .lang-globe-btn:hover {
-  background: #1c1830;
-  border-color: #6366f1;
+  background: #16122c;
+  border-color: #8b7cff;
+  color: #fff;
+  box-shadow: 0 0 16px rgba(120, 90, 255, 0.35);
 }
 
 /* Vertical Menu Dropdown */
@@ -149,7 +152,7 @@ body {
 }
 
  .logo_reposnive{
-        width:150px;
+        width:180px;
     }
 
 @media (max-width: 600px) {
@@ -178,8 +181,9 @@ body {
                 background: #fff;
             }
             
+            .stricked-menu,
             .stricked-menu.stricky-fixed{
-                display:none;
+                display:none !important;
             }
             
             
@@ -196,8 +200,10 @@ body {
 
 
 .header-area {
-   
-    padding: 10px 0px;
+    padding: 10px 12px 0;
+    background: transparent !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
 }
 
 @media (min-width: 992px) {
@@ -732,10 +738,8 @@ h2.chooseheading {
     margin-left: 3px;
 }
 .lang-globe-btn {
-   
-    width: 30px;
-    height: 30px;
-   
+    width: 36px;
+    height: 36px;
 }
 .side-menu a {
     width: 30px;
@@ -793,25 +797,369 @@ h2.chooseheading {
 }
 }
 
-a.login_update {
-    background: #673AB7;
-    padding: 10px 20px;
-    /* display: inline-block; */
-   border:2px solid #ffab07;
-    color:#fff;
-        font-weight: 700;
-    font-size: 20px;
-  
-    border-radius: 7px;
-    margin-bottom: 10px;
+.jb-dock {
+    margin: 8px 12px 6px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    border-radius: 22px;
+    background:
+        linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.015)),
+        #0b0e1c;
+    border: 1px solid rgba(130, 120, 255, 0.28);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.06);
+    position: relative;
+    overflow: hidden;
 }
-   
-    .login_detialj {
-        margin-top: 15px;
-        padding-right: 13px;
-        margin-bottom: 16px;
-        text-align: end;
+.jb-dock::before {
+    content: "";
+    position: absolute;
+    left: 12%;
+    right: 12%;
+    top: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #49d4ff, #8a6bff, #e25cff, transparent);
+}
+.jb-live {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+    padding-left: 6px;
+}
+.jb-live-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #3dffb0;
+    box-shadow: 0 0 0 4px rgba(61, 255, 176, 0.12), 0 0 12px #3dffb0;
+    flex: 0 0 auto;
+    animation: jbPulse 1.8s ease-in-out infinite;
+}
+@keyframes jbPulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(0.75); opacity: 0.7; }
+}
+.jb-live small {
+    display: block;
+    color: #ff4d6d;
+    background: linear-gradient(90deg, #ff334f, #ff9f43);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    line-height: 1.1;
+    text-shadow: 0 0 10px rgba(255, 77, 109, 0.55);
+}
+.jb-live strong {
+    display: block;
+    color: #55d8ff;
+    font-size: 12px;
+    font-weight: 650;
+    letter-spacing: 0.02em;
+    text-shadow: 0 0 10px rgba(85, 216, 255, 0.4);
+}
+.jb-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 0 0 auto;
+}
+a.login_update,
+button.login_update {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-width: 92px;
+    height: 38px;
+    padding: 0 16px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-decoration: none;
+    border-radius: 13px;
+    border: 0;
+    background: linear-gradient(120deg, #3d7dff 0%, #6d4dff 48%, #c43dff 100%);
+    box-shadow: 0 8px 18px rgba(92, 70, 255, 0.35), inset 0 1px 0 rgba(255,255,255,0.35);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+a.login_update::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 40%;
+    left: -50%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.45), transparent);
+    transform: skewX(-18deg);
+    animation: jbShine 3.4s ease-in-out infinite;
+}
+@keyframes jbShine {
+    0%, 55% { left: -50%; }
+    100% { left: 130%; }
+}
+a.login_update:hover {
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 12px 22px rgba(92, 70, 255, 0.5);
+}
+button.login_update {
+    font-family: inherit;
+    cursor: pointer;
+}
+.login_update.register_update {
+    background: transparent;
+    border: 1px solid rgba(180, 190, 255, 0.28);
+    box-shadow: none;
+    color: #d7dcf5;
+    letter-spacing: 0.12em;
+    min-width: 0;
+    padding: 0 12px;
+}
+.login_update.register_update::after {
+    display: none;
+}
+.login_update.register_update:hover {
+    color: #fff;
+    border-color: rgba(196, 61, 255, 0.7);
+    background: rgba(120, 80, 255, 0.12);
+}
+.login_detialj { display: block; }
+.header-area .xb-header {
+    background: linear-gradient(180deg, rgba(16, 14, 32, 0.96), rgba(10, 12, 24, 0.92));
+    border: 1px solid transparent;
+    border-radius: 22px;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.05);
+    position: relative;
+    padding: 0 !important;
+}
+.header-area .container {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.header-area .header__wrap {
+    min-height: 0;
+    padding: 6px 12px;
+}
+.header-area .xb-header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 22px;
+    padding: 1.5px;
+    background: linear-gradient(90deg, #34bdfd, #6e77fe, #d946ef, #34bdfd);
+    background-size: 300% 100%;
+    animation: jbBorderRun 4s linear infinite;
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+}
+@keyframes jbBorderRun {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 300% 50%; }
+}
+:root {
+    --w3m-accent: #7a5cff;
+    --w3m-border-radius-master: 8px;
+}
+.contect_wallet {
+    display: flex;
+    align-items: center;
+    position: relative;
+    min-width: 0;
+}
+.wallet-like-login {
+    height: 38px;
+    padding: 0 16px;
+    border-radius: 13px;
+    border: 0;
+    background: linear-gradient(120deg, #3d7dff 0%, #6d4dff 48%, #c43dff 100%);
+    color: #fff;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    box-shadow: 0 8px 18px rgba(92, 70, 255, 0.35), inset 0 1px 0 rgba(255,255,255,0.35);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+}
+.wallet-like-login svg {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 auto;
+}
+.wallet-like-login:hover {
+    transform: translateY(-1px);
+}
+.contect_wallet w3m-button {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 2;
+}
+
+.header-area .header__wrap {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 48px minmax(0, 1fr);
+    align-items: center;
+    gap: 10px;
+}
+.header-logo {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start;
+}
+.main-menu__wrap {
+    display: none !important;
+}
+.header-btn.ul_li {
+    display: contents !important;
+}
+.language_google {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: center;
+}
+.contect_wallet {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: end;
+}
+
+@media (max-width: 600px) {
+    .header-area {
+        padding: 7px 7px 0;
     }
+    .header-area .header__wrap {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) 38px minmax(0, 1fr);
+        align-items: center;
+        gap: 6px;
+        padding: 7px 9px;
+    }
+    .header-logo {
+        grid-column: 1;
+        min-width: 0;
+        justify-self: start;
+    }
+    .header-logo .logo_reposnive {
+        width: clamp(100px, 34vw, 130px);
+        max-width: 100%;
+        display: block;
+    }
+    .main-menu__wrap {
+        display: none !important;
+    }
+    .header-btn.ul_li {
+        display: contents !important;
+    }
+    .language_google {
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: center;
+    }
+    .contect_wallet {
+        grid-column: 3;
+        grid-row: 1;
+        justify-self: end;
+        width: auto;
+    }
+    .wallet-like-login {
+        width: clamp(104px, 31vw, 120px);
+        height: 36px;
+        padding: 0 6px;
+        font-size: clamp(9px, 2.7vw, 10px);
+        letter-spacing: 0;
+        white-space: nowrap;
+    }
+    .wallet-like-login svg {
+        width: 16px;
+        height: 16px;
+    }
+    .lang-globe-btn {
+        width: 34px;
+        height: 34px;
+        border-radius: 12px;
+    }
+    .lang-globe-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+    .lang-vertical-dropdown {
+        right: 50%;
+        transform: translateX(50%);
+    }
+}
+
+@media (max-width: 340px) {
+    .header-area {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+    .header-area .header__wrap {
+        grid-template-columns: minmax(0, 1fr) 32px minmax(0, 1fr);
+        gap: 3px;
+        padding: 6px;
+    }
+    .header-logo .logo_reposnive {
+        width: 96px;
+    }
+    .wallet-like-login {
+        width: 104px;
+        height: 33px;
+        font-size: 9px;
+        gap: 4px;
+    }
+    .wallet-like-login svg {
+        width: 14px;
+        height: 14px;
+    }
+    .lang-globe-btn {
+        width: 30px;
+        height: 30px;
+        border-radius: 10px;
+    }
+    .jb-dock {
+        margin-left: 6px;
+        margin-right: 6px;
+        gap: 5px;
+        padding: 6px;
+    }
+    .jb-live {
+        gap: 6px;
+        padding-left: 3px;
+    }
+    .jb-live small {
+        font-size: 7px;
+    }
+    .jb-live strong {
+        font-size: 10px;
+    }
+    .jb-actions {
+        gap: 5px;
+    }
+    a.login_update,
+    button.login_update {
+        min-width: 72px;
+        height: 35px;
+        padding: 0 9px;
+        font-size: 10px;
+    }
+}
 
 
 </style>
@@ -828,7 +1176,7 @@ a.login_update {
    	</div>
    	</div>-->
     <!-- Header Section Starts Here -->
-    <link rel="preload" as="style" href="public/build/assets/app-v3u5CJ1u.css" /><link rel="modulepreload" href="public/build/assets/app-Her3R83I.js" /><link rel="stylesheet" href="public/build/assets/app-v3u5CJ1u.css" data-navigate-track="reload" /><script type="module" src="public/build/assets/app-Her3R83I.js" data-navigate-track="reload"></script>         
+    <link rel="preload" as="style" href="public/build/assets/app-v3u5CJ1u.css" /><link rel="modulepreload" href="public/build/assets/app-Her3R83I.js?v=2" /><link rel="stylesheet" href="public/build/assets/app-v3u5CJ1u.css" data-navigate-track="reload" /><script type="module" src="public/build/assets/app-Her3R83I.js?v=2" data-navigate-track="reload"></script>         
    
      <!-- header start -->
     <header id="xb-header-area" class="header-area">
@@ -895,11 +1243,17 @@ a.login_update {
                 
                 
                     <div class="header-btn ul_li">
-                        <a class="login-btn" href="login.html"> Register</a>
+                        <a class="login-btn" href="#" onclick="openRegisterPopup(); return false;">Register</a>
                          <div class="contect_wallet" >
-                           <center>
-                              <w3m-button balance="show" size="sm" loadingLabel="Loading..." style="transform: scale(0.82); transform-origin: center; border:2px solid #7976ff; border-radius:19px;" label="Connect Wallet"  />
-                           </center>
+                              <button type="button" class="wallet-like-login" onclick="this.nextElementSibling.click()">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                  <path d="M4 6.5h13.5A2.5 2.5 0 0 1 20 9v9H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h12"/>
+                                  <path d="M16 11h5v4h-5a2 2 0 1 1 0-4Z"/>
+                                  <circle cx="16.5" cy="13" r=".5" fill="currentColor" stroke="none"/>
+                                </svg>
+                                <span>Connect Wallet</span>
+                              </button>
+                              <w3m-button balance="hide" size="sm" loadingLabel="Loading..." label="Connect Wallet"></w3m-button>
                 </div>
                            <div class="language_google">
                         <!-- Hidden Google Translate Element -->
@@ -1046,89 +1400,257 @@ p.list_daoo {
 
 
 input#sponsor::placeholder{
-    letter-spacing:1px;
-   font-family: cursive;
-   font-size:14px;
-}
-
-input#sponsor {
-  background: #060b15;
-    border: 1px solid #181a1c;
-    height: 45px;
-    font-size: 16px;
-    padding: 10px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    outline: none;
-   
+    color: #9aa0b5;
+    letter-spacing: 0;
+    font-family: inherit;
+    font-size: 15px;
 }
 .both_btn {
     display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 10px;
 }
-.regBtn .regView {
-    background:linear-gradient(90deg, #2d1061, #673AB7 52%, #a339ff);
-    padding: 8px 16px;
-    border-radius: 5px;
+.regBtn .regView,
+.register_back_btn,
+#regloading .regView {
+    width: 100%;
+    height: 42px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.register_back_btn {
+    border: 0;
     color: #fff;
-     flex:1;
+    background: #2a2e3a;
+}
+.regBtn .regView,
+#regloading .regView {
+    border: 0;
+    color: #fff;
+    background: linear-gradient(90deg, #7b4dff 0%, #5b7cff 55%, #3d9bff 100%);
+    box-shadow: 0 8px 18px rgba(80, 90, 255, 0.35);
 }
 .regsiter_page_design {
     position: fixed;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.75);
+    background: rgba(4, 6, 16, 0.72);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
     z-index: 99999;
-
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.regsiter_page_content {
-       position: relative;
-    width: 90%;
-    max-width: 700px;
-    max-height: 90vh;
-    overflow-y: auto;
-    margin: 0 auto;
-    background: #07121f;
     padding: 16px;
-    border-radius: 10px;
 }
-
-.register_back_btn {
+.regsiter_page_content {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    max-height: 94vh;
+    overflow: hidden;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background:
+        radial-gradient(ellipse 90% 40% at 50% 108%, rgba(0, 170, 255, 0.45), transparent 55%),
+        radial-gradient(ellipse 70% 28% at 50% 100%, rgba(150, 40, 255, 0.55), transparent 60%),
+        linear-gradient(180deg, #14082e 0%, #1a0840 55%, #090318 100%);
+    padding: 0;
+    border-radius: 22px;
+    border: 1px solid rgba(150, 70, 255, 0.45);
+    box-shadow: 0 0 40px rgba(120, 40, 255, 0.35), 0 30px 80px rgba(20, 0, 40, 0.55);
+}
+.invite-hero {
+    margin: 0;
+    line-height: 0;
+    flex: 0 0 auto;
+    width: 100%;
+    position: relative;
+    background: transparent;
+}
+.invite-hero img,
+.invite-hero svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.invite-hero::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 150px;
+    background: linear-gradient(180deg, rgba(18, 6, 40, 0) 0%, rgba(18, 6, 40, 0.55) 45%, #120828 100%);
+    pointer-events: none;
+}
+.invite-body {
+    position: relative;
+    flex: 0 0 auto;
+    margin-top: -72px;
+    padding: 28px 16px 14px;
+    background: transparent;
+}
+.invite-wallet {
+    position: relative;
+    margin-bottom: 8px;
+    z-index: 1;
+}
+.invite-connect {
+    width: 100%;
+    height: 42px;
     border: 0;
-    background: #f6b7b700;
+    border-radius: 999px;
+    background: linear-gradient(180deg, #d06bff 0%, #9a22f5 100%);
     color: #fff;
     font-size: 15px;
+    font-weight: 700;
     cursor: pointer;
- flex:1;
-    background: #060b14;
-    padding: 9px 14px;
-    border-radius: 5px;
-    border: 1px solid #2c2c2c96;
+    box-shadow: 0 0 16px rgba(176, 38, 255, 0.55), inset 0 1px 0 rgba(255,255,255,0.35);
 }
-.register_back_btn i {
-    margin-right: 6px;
+.invite-ask {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+}
+.invite-ask h2 {
+    margin: 0;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+}
+.invite-close {
+    position: absolute;
+    top: 14px;
+    right: 7px;
+    z-index: 3;
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255,255,255,0.85);
+    background: rgba(8, 4, 24, 0.45);
+    color: #fff;
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+    flex: 0 0 auto;
+}
+.sponer_id {
+    display: block;
+    margin: 0 0 6px;
+    color: #c5cbe0;
+    font-size: 14px;
+    font-weight: 500;
+}
+input#sponsor {
+    width: 100%;
+    background: #1a1d29;
+    border: 0;
+    height: 44px;
+    font-size: 15px;
+    color: #fff;
+    padding: 0 14px;
+    border-radius: 12px;
+    margin-bottom: 6px;
+    outline: none;
+    box-sizing: border-box;
+}
+input#sponsor:focus {
+    box-shadow: 0 0 0 3px rgba(124, 92, 255, 0.28);
+}
+.invite-hint {
+    display: block;
+    margin: 0 0 10px;
+    font-size: 13px;
+    font-weight: 700;
+}
+.invite-hint.verified {
+    color: #37f29a;
+    text-shadow: 0 0 10px rgba(55, 242, 154, 0.35);
+}
+.invite-hint.non-verified {
+    color: #ff5b73;
+    text-shadow: 0 0 10px rgba(255, 91, 115, 0.3);
+}
+.login-popup-copy {
+    margin: 4px 0 14px;
+    color: #c5cbe0;
+    font-size: 13px;
+}
+.login-wallet-action {
+    width: 100%;
+    height: 44px;
+    border: 0;
+    border-radius: 14px;
+    background: linear-gradient(90deg, #7b4dff 0%, #5b7cff 55%, #3d9bff 100%);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 18px rgba(80, 90, 255, 0.35);
 }
 
-
+.invitaion_link {
+    margin-top: 6px;
+    position: relative;
+    z-index: 1;
+}
 .invitaion_link p {
-    font-size: 12px;
-    color: #83909f;
+    margin: 8px 0 0;
+    font-size: 13px;
+    color: #c5cbe0;
+    text-align: left;
+}
+.register_content_update,
+.regBtn,
+.sponer_id {
+    position: relative;
+    z-index: 1;
 }
 </style>
 <main>
     
+    <div class="regsiter_page_design" id="login_sec" style="display:none;">
+        <div class="regsiter_page_content">
+          <button type="button" class="invite-close" onclick="closeLoginPopup()" aria-label="Close">&times;</button>
+          <div class="invite-hero">
+            <svg viewBox="0 0 1254 760" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Jubblion DAO">
+              <image href="public/mtheme1/assets2/img/dooo.png" x="30" y="-90" width="1194" height="1194"/>
+            </svg>
+          </div>
+          <div class="invite-body">
+            <div class="invite-ask">
+              <h2>Welcome Back</h2>
+            </div>
+            <p class="login-popup-copy">Connect your wallet securely to continue.</p>
+            <button type="button" class="login-wallet-action" onclick="openWalletFromLogin()">Connect Wallet</button>
+          </div>
+        </div>
+    </div>
     
     <div class="regsiter_page_design" id="reg_sec" style="display:none;">
         <div class="regsiter_page_content">
-
-          <h2>Enter Invitation Code</h2>
+          <button type="button" class="invite-close" onclick="closeRegisterPopup()" aria-label="Close">&times;</button>
+          <div class="invite-hero">
+            <svg viewBox="0 0 1254 760" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Jubblion DAO">
+              <image href="public/mtheme1/assets2/img/dooo.png" x="30" y="-90" width="1194" height="1194"/>
+            </svg>
+          </div>
+          <div class="invite-body">
+          <div class="invite-ask">
+            <h2>Enter Invitation Code</h2>
+          </div>
 
         <div class="register_content_update">
             <form action="https://demo.2xgain.info/register" method="post" id="registerform">
@@ -1140,13 +1662,14 @@ input#sponsor {
                    
              
                 <div class="register_in">
-                    <label class="sponer_id">
-                       Invitation Code
-                    </label>
+                    <label class="sponer_id">Invitation Code</label>
                     
-                     <Input id="sponsor" placeholder="Enter your invitation code" type="text" value=""
+                     <Input id="sponsor" placeholder="Referral ID" type="text" value=""
                                           class="mt-1 block w-full" name="sponsor" required autofocus
-                                          autocomplete="sponsor" onchange="return verify_sponsor()" />
+                                          autocomplete="sponsor"
+                                          oninput="setInviteCodeStatus(false)"
+                                          onchange="return verify_sponsor()" />
+                                       <p class="invite-hint non-verified" id="code_status">Non Verified</p>
                                        <span class="text-white" id="sp_name"></span>
                                         
                   
@@ -1160,10 +1683,8 @@ input#sponsor {
 
                 <div class="regBtn" style="display:block;">
                     <div class="both_btn">
-                     <button type="button" class="register_back_btn" onclick="closeRegisterPopup()">
-                            Back
-                        </button>
-                      <button class="regView" onclick="return registerfun()">Confirm</button>
+                      <button type="button" class="register_back_btn" onclick="closeRegisterPopup()">Cancel</button>
+                      <button class="regView" onclick="return registerfun()">Register</button>
                     </div>
                 </div>
           
@@ -1174,13 +1695,25 @@ input#sponsor {
                  </div>
 
         </div>
+          </div>
       </div>
     </div>
  
 
       <div class="login_detialj">
-                       <a class="login_update" href="index.html">LOGIN</a>
-                       </div>
+        <div class="jb-dock">
+            <div class="jb-live">
+                <span class="jb-live-dot"></span>
+                <div>
+                    <small>Globally</small>
+                    <strong>Live</strong>
+                </div>
+            </div>
+            <div class="jb-actions">
+                <a class="login_update" href="#" onclick="openLoginPopup(); return false;">Login</a>
+            </div>
+        </div>
+      </div>
     
     <section class="about pos-rel">
     <div class="container">
@@ -1704,13 +2237,13 @@ Global Spillover</h2>
                         <ul class="xb-item--footer_widget-list">
                              <li><a href="index.html"></a>Home</li>
                             <li><a href="index.html#about"></a> About Us</li>
-                            <li><a href="register.html"></a>Register </li>
+                            <li><a href="#" onclick="openRegisterPopup(); return false;">Register</a></li>
                         </ul>
                        
                     </div>
                     <div class="xb-item--footer_widget-community mb-30">
                         <h3>Join Our Popular  ICO Community</h3>
-                        <a class="them-btn" href="login.html">
+                        <a class="them-btn" href="#" onclick="openRegisterPopup(); return false;">
                             <span class="btn_icon">
                                 <img src="public/mtheme1/assets2/img/icon/discord-f-icon.svg" alt="">
                             </span>
@@ -1737,6 +2270,8 @@ Global Spillover</h2>
       document.addEventListener("DOMContentLoaded", function () {
     const popup = document.getElementById("popup_update");
     const closeBtn = document.getElementById("close_icon");
+
+    if (!popup || !closeBtn) return;
 
     // Show popup automatically after page loads
     popup.style.display = "flex";
@@ -1843,6 +2378,27 @@ Global Spillover</h2>
 <!-- =============================================================== -->
 
 <script>
+function openLoginPopup() {
+    document.getElementById('login_sec').style.display = 'flex';
+}
+
+function closeLoginPopup() {
+    document.getElementById('login_sec').style.display = 'none';
+}
+
+function openWalletFromLogin() {
+    const wallet = document.querySelector('.contect_wallet w3m-button');
+    const connectButton = wallet?.shadowRoot?.querySelector('w3m-connect-button');
+    const walletButton = connectButton?.shadowRoot?.querySelector('wui-connect-button');
+
+    closeLoginPopup();
+    if (walletButton) {
+        walletButton.click();
+    } else if (wallet) {
+        wallet.click();
+    }
+}
+
 function openRegisterPopup() {
    
         document.getElementById('reg_sec').style.display = 'flex';
@@ -1887,6 +2443,14 @@ function closeRegisterPopup() {
          }
          
          let sponsorval = '' ;
+
+         function setInviteCodeStatus(isVerified) {
+             const status = document.getElementById('code_status');
+             if (!status) return;
+             status.textContent = isVerified ? 'Verified' : 'Non Verified';
+             status.classList.toggle('verified', isVerified);
+             status.classList.toggle('non-verified', !isVerified);
+         }
          
          async function preview(){
             // alert();
@@ -1898,29 +2462,41 @@ function closeRegisterPopup() {
          }
          
          async function verify_sponsor(){
-             let rr = await getUserAccount();
-             
-             let dta = {
-                 _token : "kizpby7C0c9eCu7iVT9weXLeHAWYm8kcQ5oeqGee",
-                 sponsor:$('#sponsor').val(),
-                 eth_address : rr
-             }
-             
-             $.post('/verify_sponsor',dta,function(res){
-                 
-                 //console.log(res.success);
-                 if(res.success==true){
-                     $('.regBtn').css('display','block');
-                     $('#sp_name').html(res.data.name);
-                     $('#sp_name').css('color','#fff');
-                     sponsorval = res.data.eth_address;
+             const code = $('#sponsor').val().trim();
+             setInviteCodeStatus(false);
+             if (!code) return false;
 
-                 }else{
-                     $('#sp_name').html("Invalid Sponsor");
-                     $('#sp_name').css('color','red');
-                 }
-                 //console.log();
-             });
+             try {
+                 let rr = await getUserAccount();
+                 let dta = {
+                     _token : "kizpby7C0c9eCu7iVT9weXLeHAWYm8kcQ5oeqGee",
+                     sponsor: code,
+                     eth_address : rr
+                 };
+
+                 $.post('/verify_sponsor', dta, function(res){
+                     const isVerified = res.success === true;
+                     setInviteCodeStatus(isVerified);
+
+                     if (isVerified) {
+                         $('.regBtn').css('display','block');
+                         $('#sp_name').html(res.data.name);
+                         $('#sp_name').css('color','#fff');
+                         sponsorval = res.data.eth_address;
+                     } else {
+                         $('#sp_name').html('');
+                         sponsorval = '';
+                     }
+                 }).fail(function(){
+                     setInviteCodeStatus(false);
+                     sponsorval = '';
+                 });
+             } catch (error) {
+                 setInviteCodeStatus(false);
+                 sponsorval = '';
+             }
+
+             return false;
          }
          async function registerfun(){
              $('.regBtn').css('display','none');
@@ -1968,5 +2544,5 @@ function closeRegisterPopup() {
      </body>
    
    
-<!-- Mirrored from https://demo.2xgain.info/login by HTTrack Website Copier/3.x [XR&CO], Fri, 25 Sep 2026 16:04:33 GMT -->
-</html><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"085acb71aab042e89c3de2ea5309aa68","r":1,"spa":2}' crossorigin="anonymous"></script>
+<!-- Mirrored from https://demo.2xgain.info/ by HTTrack Website Copier/3.x [XR&CO], Fri, 25 Sep 2026 16:02:07 GMT -->
+</html>
