@@ -84,22 +84,25 @@ body {
 
 /* Globe Icon Button */
 .lang-globe-btn {
-  background: #141122;
-  border: 1px solid #2b2740;
-  color: #ffffff;
-  width: 48px;
-  height: 48px;
-  border-radius: 20px;
+  background: rgba(8, 10, 24, 0.7);
+  border: 1px solid rgba(140, 160, 255, 0.28);
+  color: #d7dcff;
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all 0.2s ease;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04);
 }
 
 .lang-globe-btn:hover {
-  background: #1c1830;
-  border-color: #6366f1;
+  background: #16122c;
+  border-color: #8b7cff;
+  color: #fff;
+  box-shadow: 0 0 16px rgba(120, 90, 255, 0.35);
 }
 
 /* Vertical Menu Dropdown */
@@ -178,8 +181,9 @@ body {
                 background: #fff;
             }
             
+            .stricked-menu,
             .stricked-menu.stricky-fixed{
-                display:none;
+                display:none !important;
             }
             
             
@@ -196,8 +200,10 @@ body {
 
 
 .header-area {
-   
-    padding: 10px 0px;
+    padding: 10px 12px 0;
+    background: transparent !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
 }
 
 @media (min-width: 992px) {
@@ -732,10 +738,8 @@ h2.chooseheading {
     margin-left: 3px;
 }
 .lang-globe-btn {
-   
-    width: 30px;
-    height: 30px;
-   
+    width: 36px;
+    height: 36px;
 }
 .side-menu a {
     width: 30px;
@@ -793,25 +797,205 @@ h2.chooseheading {
 }
 }
 
-a.login_update {
-    background: #673AB7;
-    padding: 10px 20px;
-    /* display: inline-block; */
-   border:2px solid #ffab07;
-    color:#fff;
-        font-weight: 700;
-    font-size: 20px;
-  
-    border-radius: 7px;
-    margin-bottom: 10px;
+.jb-dock {
+    margin: 8px 12px 6px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    border-radius: 22px;
+    background:
+        linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.015)),
+        #0b0e1c;
+    border: 1px solid rgba(130, 120, 255, 0.28);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.06);
+    position: relative;
+    overflow: hidden;
 }
-   
-    .login_detialj {
-        margin-top: 15px;
-        padding-right: 13px;
-        margin-bottom: 16px;
-        text-align: end;
-    }
+.jb-dock::before {
+    content: "";
+    position: absolute;
+    left: 12%;
+    right: 12%;
+    top: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #49d4ff, #8a6bff, #e25cff, transparent);
+}
+.jb-live {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+    padding-left: 6px;
+}
+.jb-live-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #3dffb0;
+    box-shadow: 0 0 0 4px rgba(61, 255, 176, 0.12), 0 0 12px #3dffb0;
+    flex: 0 0 auto;
+    animation: jbPulse 1.8s ease-in-out infinite;
+}
+@keyframes jbPulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(0.75); opacity: 0.7; }
+}
+.jb-live small {
+    display: block;
+    color: #8d93ad;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    line-height: 1.1;
+}
+.jb-live strong {
+    display: block;
+    color: #f4f6ff;
+    font-size: 12px;
+    font-weight: 650;
+    letter-spacing: 0.02em;
+}
+.jb-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 0 0 auto;
+}
+a.login_update,
+button.login_update {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-width: 92px;
+    height: 38px;
+    padding: 0 16px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-decoration: none;
+    border-radius: 13px;
+    border: 0;
+    background: linear-gradient(120deg, #3d7dff 0%, #6d4dff 48%, #c43dff 100%);
+    box-shadow: 0 8px 18px rgba(92, 70, 255, 0.35), inset 0 1px 0 rgba(255,255,255,0.35);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+a.login_update::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 40%;
+    left: -50%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.45), transparent);
+    transform: skewX(-18deg);
+    animation: jbShine 3.4s ease-in-out infinite;
+}
+@keyframes jbShine {
+    0%, 55% { left: -50%; }
+    100% { left: 130%; }
+}
+a.login_update:hover {
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 12px 22px rgba(92, 70, 255, 0.5);
+}
+button.login_update {
+    font-family: inherit;
+    cursor: pointer;
+}
+.login_update.register_update {
+    background: transparent;
+    border: 1px solid rgba(180, 190, 255, 0.28);
+    box-shadow: none;
+    color: #d7dcf5;
+    letter-spacing: 0.12em;
+    min-width: 0;
+    padding: 0 12px;
+}
+.login_update.register_update::after {
+    display: none;
+}
+.login_update.register_update:hover {
+    color: #fff;
+    border-color: rgba(196, 61, 255, 0.7);
+    background: rgba(120, 80, 255, 0.12);
+}
+.login_detialj { display: block; }
+.header-area .xb-header {
+    background: linear-gradient(180deg, rgba(16, 14, 32, 0.96), rgba(10, 12, 24, 0.92));
+    border: 1px solid transparent;
+    border-radius: 22px;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.05);
+    position: relative;
+    padding: 0 !important;
+}
+.header-area .container {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.header-area .header__wrap {
+    min-height: 0;
+    padding: 6px 12px;
+}
+.header-area .xb-header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 22px;
+    padding: 1.5px;
+    background: linear-gradient(90deg, #34bdfd, #6e77fe, #d946ef, #34bdfd);
+    background-size: 300% 100%;
+    animation: jbBorderRun 4s linear infinite;
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+}
+@keyframes jbBorderRun {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 300% 50%; }
+}
+:root {
+    --w3m-accent: #7a5cff;
+    --w3m-border-radius-master: 8px;
+}
+.contect_wallet {
+    display: flex;
+    align-items: center;
+    position: relative;
+    min-width: 0;
+}
+.wallet-like-login {
+    height: 38px;
+    padding: 0 16px;
+    border-radius: 13px;
+    border: 0;
+    background: linear-gradient(120deg, #3d7dff 0%, #6d4dff 48%, #c43dff 100%);
+    color: #fff;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    box-shadow: 0 8px 18px rgba(92, 70, 255, 0.35), inset 0 1px 0 rgba(255,255,255,0.35);
+}
+.wallet-like-login:hover {
+    transform: translateY(-1px);
+}
+.contect_wallet w3m-button {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 2;
+}
 
 
 </style>
@@ -897,9 +1081,8 @@ a.login_update {
                     <div class="header-btn ul_li">
                         <a class="login-btn" href="login.html"> Register</a>
                          <div class="contect_wallet" >
-                           <center>
-                              <w3m-button balance="show" size="sm" loadingLabel="Loading..." style="transform: scale(0.82); transform-origin: center; border:2px solid #7976ff; border-radius:19px;" label="Connect Wallet"  />
-                           </center>
+                              <button type="button" class="wallet-like-login" onclick="this.nextElementSibling.click()">Connect Wallet</button>
+                              <w3m-button balance="hide" size="sm" loadingLabel="Loading..." label="Connect Wallet"></w3m-button>
                 </div>
                            <div class="language_google">
                         <!-- Hidden Google Translate Element -->
@@ -1046,80 +1229,198 @@ p.list_daoo {
 
 
 input#sponsor::placeholder{
-    letter-spacing:1px;
-   font-family: cursive;
-   font-size:14px;
-}
-
-input#sponsor {
-  background: #060b15;
-    border: 1px solid #181a1c;
-    height: 45px;
-    font-size: 16px;
-    padding: 10px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    outline: none;
-   
+    color: #9aa0b5;
+    letter-spacing: 0;
+    font-family: inherit;
+    font-size: 15px;
 }
 .both_btn {
     display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 10px;
 }
-.regBtn .regView {
-    background:linear-gradient(90deg, #2d1061, #673AB7 52%, #a339ff);
-    padding: 8px 16px;
-    border-radius: 5px;
+.regBtn .regView,
+.register_back_btn,
+#regloading .regView {
+    width: 100%;
+    height: 42px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.register_back_btn {
+    border: 0;
     color: #fff;
-     flex:1;
+    background: #2a2e3a;
+}
+.regBtn .regView,
+#regloading .regView {
+    border: 0;
+    color: #fff;
+    background: linear-gradient(90deg, #7b4dff 0%, #5b7cff 55%, #3d9bff 100%);
+    box-shadow: 0 8px 18px rgba(80, 90, 255, 0.35);
 }
 .regsiter_page_design {
     position: fixed;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.75);
+    background: rgba(4, 6, 16, 0.72);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     z-index: 99999;
-
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.regsiter_page_content {
-       position: relative;
-    width: 90%;
-    max-width: 700px;
-    max-height: 90vh;
-    overflow-y: auto;
-    margin: 0 auto;
-    background: #07121f;
     padding: 16px;
-    border-radius: 10px;
 }
-
-.register_back_btn {
+.regsiter_page_content {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    max-height: 94vh;
+    overflow: hidden;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background:
+        radial-gradient(ellipse 90% 40% at 50% 108%, rgba(0, 170, 255, 0.45), transparent 55%),
+        radial-gradient(ellipse 70% 28% at 50% 100%, rgba(150, 40, 255, 0.55), transparent 60%),
+        linear-gradient(180deg, #14082e 0%, #1a0840 55%, #090318 100%);
+    padding: 0;
+    border-radius: 22px;
+    border: 1px solid rgba(150, 70, 255, 0.45);
+    box-shadow: 0 0 40px rgba(120, 40, 255, 0.35), 0 30px 80px rgba(20, 0, 40, 0.55);
+}
+.invite-hero {
+    margin: 0;
+    line-height: 0;
+    flex: 0 0 auto;
+    width: 100%;
+    position: relative;
+    background: transparent;
+}
+.invite-hero img,
+.invite-hero svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.invite-hero::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 150px;
+    background: linear-gradient(180deg, rgba(18, 6, 40, 0) 0%, rgba(18, 6, 40, 0.55) 45%, #120828 100%);
+    pointer-events: none;
+}
+.invite-body {
+    position: relative;
+    flex: 0 0 auto;
+    margin-top: -72px;
+    padding: 28px 16px 14px;
+    background: transparent;
+}
+.invite-wallet {
+    position: relative;
+    margin-bottom: 8px;
+    z-index: 1;
+}
+.invite-connect {
+    width: 100%;
+    height: 42px;
     border: 0;
-    background: #f6b7b700;
+    border-radius: 999px;
+    background: linear-gradient(180deg, #d06bff 0%, #9a22f5 100%);
     color: #fff;
     font-size: 15px;
+    font-weight: 700;
     cursor: pointer;
- flex:1;
-    background: #060b14;
-    padding: 9px 14px;
-    border-radius: 5px;
-    border: 1px solid #2c2c2c96;
+    box-shadow: 0 0 16px rgba(176, 38, 255, 0.55), inset 0 1px 0 rgba(255,255,255,0.35);
 }
-.register_back_btn i {
-    margin-right: 6px;
+.invite-ask {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+}
+.invite-ask h2 {
+    margin: 0;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+}
+.invite-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 3;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255,255,255,0.85);
+    background: rgba(8, 4, 24, 0.45);
+    color: #fff;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    flex: 0 0 auto;
+}
+.sponer_id {
+    display: block;
+    margin: 0 0 6px;
+    color: #c5cbe0;
+    font-size: 14px;
+    font-weight: 500;
+}
+input#sponsor {
+    width: 100%;
+    background: #1a1d29;
+    border: 0;
+    height: 44px;
+    font-size: 15px;
+    color: #fff;
+    padding: 0 14px;
+    border-radius: 12px;
+    margin-bottom: 6px;
+    outline: none;
+    box-sizing: border-box;
+}
+input#sponsor:focus {
+    box-shadow: 0 0 0 3px rgba(124, 92, 255, 0.28);
+}
+.invite-hint {
+    display: block;
+    margin: 0 0 10px;
+    color: #b7bdd4;
+    font-size: 13px;
 }
 
-
+.invitaion_link {
+    margin-top: 6px;
+    position: relative;
+    z-index: 1;
+}
 .invitaion_link p {
-    font-size: 12px;
-    color: #83909f;
+    margin: 8px 0 0;
+    font-size: 13px;
+    color: #c5cbe0;
+    text-align: left;
+}
+.register_content_update,
+.regBtn,
+.sponer_id {
+    position: relative;
+    z-index: 1;
 }
 </style>
 <main>
@@ -1127,8 +1428,16 @@ input#sponsor {
     
     <div class="regsiter_page_design" id="reg_sec" style="display:none;">
         <div class="regsiter_page_content">
-
-          <h2>Enter Invitation Code</h2>
+          <button type="button" class="invite-close" onclick="closeRegisterPopup()" aria-label="Close">&times;</button>
+          <div class="invite-hero">
+            <svg viewBox="0 0 1254 760" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Jubblion DAO">
+              <image href="public/mtheme1/assets2/img/dooo.png" x="0" y="-120" width="1254" height="1254"/>
+            </svg>
+          </div>
+          <div class="invite-body">
+          <div class="invite-ask">
+            <h2>Enter Invitation Code</h2>
+          </div>
 
         <div class="register_content_update">
             <form action="https://demo.2xgain.info/register" method="post" id="registerform">
@@ -1140,13 +1449,12 @@ input#sponsor {
                    
              
                 <div class="register_in">
-                    <label class="sponer_id">
-                       Invitation Code
-                    </label>
+                    <label class="sponer_id">Invitation Code</label>
                     
-                     <Input id="sponsor" placeholder="Enter your invitation code" type="text" value=""
+                     <Input id="sponsor" placeholder="Enter invitation code" type="text" value=""
                                           class="mt-1 block w-full" name="sponsor" required autofocus
                                           autocomplete="sponsor" onchange="return verify_sponsor()" />
+                                       <p class="invite-hint">Format: 6-12 letters or numbers</p>
                                        <span class="text-white" id="sp_name"></span>
                                         
                   
@@ -1160,9 +1468,7 @@ input#sponsor {
 
                 <div class="regBtn" style="display:block;">
                     <div class="both_btn">
-                     <button type="button" class="register_back_btn" onclick="closeRegisterPopup()">
-                            Back
-                        </button>
+                      <button type="button" class="register_back_btn" onclick="closeRegisterPopup()">Cancel</button>
                       <button class="regView" onclick="return registerfun()">Confirm</button>
                     </div>
                 </div>
@@ -1174,13 +1480,26 @@ input#sponsor {
                  </div>
 
         </div>
+          </div>
       </div>
     </div>
  
 
       <div class="login_detialj">
-                       <a class="login_update" href="index.html">LOGIN</a>
-                       </div>
+        <div class="jb-dock">
+            <div class="jb-live">
+                <span class="jb-live-dot"></span>
+                <div>
+                    <small>On-chain</small>
+                    <strong>Member gate</strong>
+                </div>
+            </div>
+            <div class="jb-actions">
+                <a class="login_update" href="login.html">Login</a>
+                <button type="button" class="login_update register_update" onclick="openRegisterPopup()">Register</button>
+            </div>
+        </div>
+      </div>
     
     <section class="about pos-rel">
     <div class="container">
