@@ -997,6 +997,67 @@ button.login_update {
     z-index: 2;
 }
 
+@media (max-width: 600px) {
+    .header-area {
+        padding: 7px 7px 0;
+    }
+    .header-area .header__wrap {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) 38px minmax(0, 1fr);
+        align-items: center;
+        gap: 6px;
+        padding: 7px 9px;
+    }
+    .header-logo {
+        grid-column: 1;
+        min-width: 0;
+        justify-self: start;
+    }
+    .header-logo .logo_reposnive {
+        width: 112px;
+        max-width: 100%;
+        display: block;
+    }
+    .main-menu__wrap {
+        display: none !important;
+    }
+    .header-btn.ul_li {
+        display: contents !important;
+    }
+    .language_google {
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: center;
+    }
+    .contect_wallet {
+        grid-column: 3;
+        grid-row: 1;
+        justify-self: end;
+        width: auto;
+    }
+    .wallet-like-login {
+        width: 108px;
+        height: 36px;
+        padding: 0 8px;
+        font-size: 10px;
+        letter-spacing: 0;
+        white-space: nowrap;
+    }
+    .lang-globe-btn {
+        width: 34px;
+        height: 34px;
+        border-radius: 12px;
+    }
+    .lang-globe-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+    .lang-vertical-dropdown {
+        right: 50%;
+        transform: translateX(50%);
+    }
+}
+
 
 </style>
            
@@ -1490,8 +1551,8 @@ input#sponsor:focus {
             <div class="jb-live">
                 <span class="jb-live-dot"></span>
                 <div>
-                    <small>On-chain</small>
-                    <strong>Member gate</strong>
+                    <small>Globally</small>
+                    <strong>Live</strong>
                 </div>
             </div>
             <div class="jb-actions">
